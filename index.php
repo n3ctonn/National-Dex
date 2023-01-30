@@ -22,9 +22,22 @@ if ($result->num_rows > 0) {
   }
 }
 
+if(isset($_POST["reset"])){
+
+ $sql = "SELECT * FROM pokedex";
+ $result = $conn->query($sql);
+
+ if ($result->num_rows > 0) { 
+    $tabella="";
+   while($row = $result->fetch_assoc()) {
+     $tabella .= "<tr><td>  " .  $row["Numero_Pokemon"] . " </td><td>  " . $row["Nome"] . "</td><td>  " . $row["Tipo_Primario"] . " </td><td>  " . $row["Tipo_Secondario"] . "</td><td>  " . $row["Prima_Abilità"] . "</td><td> " . $row["Seconda_abilità"] . "</td><td>  " . $row["Abilità_Nascosta"] . "</td><td>  " . $row["PS"] . "</td><td>  " . $row["Attacco"] . "</td><td>  " . $row["Difesa"] . "</td><td>  " . $row["Att_Sp"] . "</td><td> " . $row["Dif_Sp"] . "</td><td> " . $row["Velocità"] . "</td><td> " . $row["Totale"] . "</td></tr>";
+    }
+  }
+
+}
 
 
-if(isset($_POST['ricerca'])){
+if(isset($_POST['search'])){
    
   $query = "SELECT * FROM pokedex where Numero_Pokemon = (?)"; 
   if($statements = $conn->prepare($query)){
@@ -50,7 +63,7 @@ if(isset($_POST['ricerca'])){
 
 
 
-if(isset($_POST['ricerca'])){
+if(isset($_POST['search'])){
    
   $query = "SELECT * FROM pokedex where Nome = (?)"; 
   if($statements = $conn->prepare($query)){
@@ -76,7 +89,7 @@ if(isset($_POST['ricerca'])){
 
 
 
-if(isset($_POST['ricerca'])){
+if(isset($_POST['search'])){
    
   $query = "SELECT * FROM pokedex where Tipo_Primario = (?) OR Tipo_Secondario = (?);"; 
   if($statements = $conn->prepare($query)){
@@ -100,7 +113,7 @@ if(isset($_POST['ricerca'])){
 }
 
 
-if(isset($_POST['ricerca'])){
+if(isset($_POST['search'])){
    
   $query = "SELECT * FROM pokedex where Prima_Abilità = (?) OR Seconda_Abilità = (?) OR Abilità_Nascosta=(?);"; 
   if($statements = $conn->prepare($query)){
@@ -133,22 +146,25 @@ if(isset($_POST['ricerca'])){
 <html lang="en">
   <head>
      <title>Pokédex Nazionale</title>
-     <link rel="stylesheet" href="styles.css"> 
+     <link rel="stylesheet" href="style.css"> 
+     <script src="script.js"></script>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
 
-    <h1 class="Titolo"> Elenco dei Pokémon secondo il Pokèdex Nazionale</h1><br><br>
+    <h1 class="title"> Elenco dei Pokémon secondo il Pokèdex Nazionale</h1><br><br>
      
     <div class="container">
       <table class="table" >
        <thead>
           <form action="" method="post">
-            <input type="text"  name="id" class="numero"  placeholder="Ricerca Pokemon"/> 
-          
-            <input type="submit" name="ricerca" class="ricerca" value="Cerca"> 
+            <div class="input">
+            <input type="text"  name="id" class="number"  placeholder="Ricerca Pokemon"/> 
+            <input type="submit" name="search" id="search" class="search" class="button" value="Cerca">
+            <input type="submit" name="reset" class="reset" class="button" value="Reset">
+            </div> 
 
             <tr>
               <th>Index</th>
