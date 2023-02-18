@@ -1,0 +1,146 @@
+
+/* Stile Generale*/
+body{
+   background-color: #97D8E8;
+   font-family: 'Roboto', sans-serif;
+}
+
+th{
+   font-size: bold;
+   color: black;
+   font-size: 17px;
+}
+
+h1{
+   color: #004F5C;
+}
+
+/*Creazione  tabella*/
+.table {
+   display: block;
+   border-collapse: collapse;
+   margin: 25px 0;
+   font-size: 0.8em;
+   width: 97%;
+   border-radius: 5px 5px 0 0;
+   overflow: hidden;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   font: Arial;
+   background-color: #fefefe;
+}
+
+.table thead tr {
+   background-color: #00A8D5;
+   color: #97D8E8;
+   text-align: center;
+   border-top: 3px solid #00A8D5;
+   border-left: 3px solid #00A8D5;
+   border-right: 3px solid #00A8D5;
+}
+
+.table th, .table td {
+   padding: 12px 15px;
+}
+
+.table tbody tr {
+   border-bottom: 1px solid #dddddd;
+}
+
+
+
+.table tbody tr:last-of-type {
+   border-bottom: 2px solid #00A8D5;
+}
+
+.table tbody tr {
+   border-left: 3px solid #00A8D5;
+   border-right: 3px solid #00A8D5;
+}
+
+/*Ricerca del pokemon*/
+
+.input {
+   border-collapse: collapse;
+   border: 2px solid #00A8D5;
+   background-color: #00A8D5;
+   position: relative;
+   border-radius: 25px;
+   left: 1067px;
+   width: 340px;
+   height: 50px;
+}
+
+.number {
+   background: #ffffff;
+   border: 0.5px solid #00A8D5;
+   border-radius: 25px 0 0 25px;
+   outline: none;
+   position: relative;
+   bottom: -3px;
+   left: 2.5px;
+   width: 200px;
+   height: 40px;
+   font-size: 15px;
+}
+
+.search {
+   position: relative;
+   bottom: -3px;
+   right: -3px;
+   height: 44px;
+   width: 55px;
+   border: 0.5px solid #00A8D5;
+   border-radius: 0 25px 25px 0;
+   cursor: pointer;
+   background: #ffffff;
+   color: black;
+   font-size: 15px;
+   text-align: center;
+}
+
+.search:hover {
+   background-color: #00A8D5;
+}
+
+
+.reset{
+   position: relative;
+   bottom: -3px;
+   right: -3px;
+   height: 44px;
+   width: 65px;
+   border: 0.5px solid #00A8D5;
+   border-radius: 25px 25px 25px 25px;
+   background-color: #ffffff;
+   cursor: pointer;
+   color: black;
+   font-size: 15px;
+   text-align: center;
+}
+
+.reset:hover {
+   background-color: #00A8D5;
+}
+
+
+.title {
+   font-size: 50px;
+   text-align: center;
+}
+
+.github{
+   border: 1px solid black;
+   width: 30px;
+   height: 30px;
+   position: relative;
+   left: 28px;
+}
+.image1{
+   object-fit: cover;
+   height: 30px;
+   width: 30px;
+}
+
+/*frociazzo*/
